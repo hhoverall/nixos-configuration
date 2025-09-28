@@ -1,2 +1,2 @@
 nixfiles/
-secrets.nix
+hydra-secret.nix

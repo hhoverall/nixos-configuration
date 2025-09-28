@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, secrets, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -78,7 +78,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -123,7 +122,7 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
   nova.profile = "shared";
-  nova.substituters.nova.password = secrets.hydra-password;
+  nova.substituters.nova.password = import ./hydra-secret.nix;
   home-manager.sharedModules = [{
     home.stateVersion = "23.05";
   }];
