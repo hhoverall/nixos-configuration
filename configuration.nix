@@ -81,9 +81,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Uninstall chrome
-  programs.chromium.enable = false;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -183,5 +180,8 @@
 
 
     };
-  
+
+    # Disables GNOME default utilities
+    # services.gnome.core-utilities.enable = false;
+
 }
